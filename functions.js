@@ -43,15 +43,20 @@
 
             }
 
-            const player = new Cuadrado(20,80,50,50,"black"); 
+            const player = new Cuadrado(20,40,50,50,"black"); 
             const target = new Cuadrado(randomInteger(460), randomInteger(460),40,40,"black");
           
           
 
-            walls.push( new Cuadrado(80,370,320,15,"gray") )
-            walls.push( new Cuadrado(-10,35,800,15,"gray") )
-            walls.push( new Cuadrado(80,40,15,115,"BLACK") )
-            walls.push( new Cuadrado(80,140,115,15,"BLACK") )
+            walls.push( new Cuadrado(350,30,15,140,"Black") )
+            walls.push( new Cuadrado(180,160,185,15,"black") )
+            walls.push( new Cuadrado(40,160,60,15,"black") )
+            walls.push( new Cuadrado(180,230,120,15,"black") )
+            walls.push( new Cuadrado(-10,30,800,5,"BLACK") )
+            walls.push( new Cuadrado(90,105,15,200,"BLACK") )
+            walls.push( new Cuadrado(90,300,300,15,"BLACK") )
+            walls.push( new Cuadrado(180,160,15,80,"BLACK") )
+            walls.push( new Cuadrado(0,90,215,15,"BLACK") )
 
             window.requestAnimationFrame = (function () {
                 return window.requestAnimationFrame ||
@@ -96,25 +101,25 @@
                     if (dir == 1) {
                         player.y-=speed;
                         if (player.y+50 < 0) {
-                            player.y = 550;
+                            player.y = 1000;
                         }
                     }
                     if (dir == 2) {
                         player.y+=speed;
-                        if (player.y+50 > 700) {
+                        if (player.y+50 > 1900) {
                             player.y = -50;
                         }
                     }
                     if (dir == 3) {
                         player.x+=speed;
-                        if (player.x+50 > 700) {
+                        if (player.x+50 > 1000) {
                             player.x = -50;
                         }
                     }
                     if (dir == 4) {
                         player.x-=speed;
                         if (player.x+50 < 0) {
-                            player.x = 550;
+                            player.x = 1000;
                         }
                     } 
 
@@ -163,7 +168,7 @@
             {
             //MAPA DE FONDO
                 ctx.fillStyle = "#70401F";
-                ctx.fillRect(0,0,700,700);
+                ctx.fillRect(0,0,1000,1000);
 
             //PUNTAJE Y TITULO
                 ctx.font = "20px Georgia";
@@ -174,7 +179,7 @@
                 ctx.fillText("Adventures  of  Tommy  the  diver", 300, 23);
                 
             //JUGADORES
-                ctx.drawImage(image,player.x,player.y,50,53);
+                ctx.drawImage(image,player.x,player.y,40,40);
                 
                 ctx.drawImage(image2, target.x, target.y, 40, 40);
               
