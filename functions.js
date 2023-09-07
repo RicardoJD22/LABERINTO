@@ -54,12 +54,18 @@ const target = new Cuadrado(randomInteger(460), randomInteger(460),40,40,"black"
 
 
 
+
+//BORDES 
+walls.push( new Cuadrado(-10,30,800,5,"BLACK") )
+walls.push( new Cuadrado(0,30,5,1100,"BLACK") )
+walls.push( new Cuadrado(1640,0,5,1100,"BLACK") )
+//walls.push( new Cuadrado(0,1090,1400,5,"BLACK") )
+
+//ESTRUCTURA DE LABERINTO SUPERIOR
 walls.push( new Cuadrado(350,30,15,140,"Black") )
 walls.push( new Cuadrado(180,160,185,15,"black") )
 walls.push( new Cuadrado(40,160,60,15,"black") )
 walls.push( new Cuadrado(180,230,120,15,"black") )
-//BORDES 
-walls.push( new Cuadrado(-10,30,800,5,"BLACK") )
 walls.push( new Cuadrado(90,105,15,200,"BLACK") )
 walls.push( new Cuadrado(30,305,15,390,"BLACK") )
 walls.push( new Cuadrado(0,695,200,15,"BLACK") )
