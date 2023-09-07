@@ -6,15 +6,17 @@ let walls = [];
 let pause = false;
 var image = new Image();
 var image2 = new Image();
+var pauseImg = new Image();
 var audio = new Audio();
 let cronometro;
 let isRunning = false;
 let segundos = 0;
 let minutos = 0;
-
-audio.src="siuu.mp3";
+//audio.src="song.mp3";
+//audio.src="siuu.mp3";
 image.src="Mamado.png";
 image2.src="rigby.png";
+pauseImg.src="Pause.jpg";
 var imagenFondo = new Image();
 imagenFondo.src = 'Espacio.jpg';
 
@@ -130,7 +132,7 @@ walls.push( new Cuadrado(985,830,15,100,"BLACK") )
 walls.push( new Cuadrado(550,930,450,15,"BLACK") )
 walls.push( new Cuadrado(510,600,15,150,"BLACK") )
 walls.push( new Cuadrado(990,830,330,15,"BLACK") )
-//walls.push( new Cuadrado(990,1130,15,330,"red") )
+walls.push( new Cuadrado(1020,680,15,60,"BLACK") )
 walls.push( new Cuadrado(1000,1130,530,15,"BLACK") )
 walls.push( new Cuadrado(510,590,70,15,"BLACK") )
 walls.push( new Cuadrado(870,680,15,70,"BLACK") )
@@ -255,6 +257,7 @@ function paint(){
 
     ctx.fillStyle = "#70401F";
     ctx.fillRect(0,0,1645,1100);
+    audio.play();
 
 //PUNTAJE Y TITULO
     ctx.font = "20px ARIAL";
@@ -274,12 +277,14 @@ function paint(){
 
     if (pause) {
 
-    ctx.fillStyle = "rgba(154,160,154,0.5)";
-    ctx.fillRect(0,0,700,700);
+//DISEÑO DE PAUSADO
+    ctx.drawImage(pauseImg,0,0,1645,1100);
+    //ctx.fillRect(0,0,700,700);
+    ctx.font = "50px ARIAL";
+    ctx.fillStyle = "WHITE";
+    ctx.fillText("P A U S E (PRESIONA [ESPACIO] PARA REANUDAR)", 185, 225);
+    ctx.fillText("(PRESIONA [ESPACIO] PARA REANUDAR)", 300, 425);
 
-    ctx.font = "40px Georgia";
-    ctx.fillStyle = "black";
-    ctx.fillText("P A U S E", 185, 225);
     }
 
  
