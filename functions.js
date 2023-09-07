@@ -14,7 +14,7 @@ let minutos = 0;
 
 audio.src="siuu.mp3";
 image.src="Mamado.png";
-image2.src="concha.png";
+image2.src="rigby.png";
 var imagenFondo = new Image();
 imagenFondo.src = 'Espacio.jpg';
 
@@ -56,16 +56,16 @@ const target = new Cuadrado(randomInteger(460), randomInteger(460),40,40,"black"
 
 
 //BORDES 
-walls.push( new Cuadrado(-10,30,800,5,"BLACK") )
+walls.push( new Cuadrado(-10,30,1650,5,"BLACK") )
 walls.push( new Cuadrado(0,30,5,1100,"BLACK") )
 walls.push( new Cuadrado(1640,0,5,1100,"BLACK") )
 //walls.push( new Cuadrado(0,1090,1400,5,"BLACK") )
 
 //ESTRUCTURA DE LABERINTO SUPERIOR
-walls.push( new Cuadrado(350,30,15,140,"Black") )
-walls.push( new Cuadrado(180,160,185,15,"black") )
-walls.push( new Cuadrado(40,160,60,15,"black") )
-walls.push( new Cuadrado(180,230,120,15,"black") )
+walls.push( new Cuadrado(350,30,15,140,"BlACK") )
+walls.push( new Cuadrado(180,160,480,15,"BLACK") )
+walls.push( new Cuadrado(40,160,60,15,"BLACK") )
+walls.push( new Cuadrado(180,230,120,15,"BLACK") )
 walls.push( new Cuadrado(90,105,15,200,"BLACK") )
 walls.push( new Cuadrado(30,305,15,390,"BLACK") )
 walls.push( new Cuadrado(0,695,200,15,"BLACK") )
@@ -74,9 +74,10 @@ walls.push( new Cuadrado(180,160,15,80,"BLACK") )
 walls.push( new Cuadrado(0,90,215,15,"BLACK") )
 walls.push( new Cuadrado(650,90,215,15,"BLACK") )
 walls.push( new Cuadrado(820,90,15,140,"BLACK") )
-walls.push( new Cuadrado(450,95,55,15,"BLACK") )
+walls.push( new Cuadrado(580,160,15,70,"BLACK") )
+walls.push( new Cuadrado(450,95,65,15,"BLACK") )
 walls.push( new Cuadrado(415,240,15,70,"BLACK") )
-walls.push( new Cuadrado(600,170,15,70,"BLACK") )
+walls.push( new Cuadrado(500,35,15,70,"BLACK") )
 walls.push( new Cuadrado(510,240,15,70,"BLACK") )
 walls.push( new Cuadrado(670,240,15,70,"BLACK") )
 walls.push( new Cuadrado(820,230,15,85,"BLACK") )
@@ -253,7 +254,7 @@ function paint(){
 //MAPA DE FONDO
 
     ctx.fillStyle = "#70401F";
-    ctx.fillRect(0,0,1655,1100);
+    ctx.fillRect(0,0,1645,1100);
 
 //PUNTAJE Y TITULO
     ctx.font = "20px ARIAL";
@@ -261,7 +262,7 @@ function paint(){
     ctx.fillText("SCORE: "+score, 5, 20);
     ctx.font = "20px ARIAL";
     ctx.fillStyle = "WHITE";
-    ctx.fillText("REGULAR SHOW ", 300, 23);
+    ctx.fillText("REGULAR SHOW ", 730, 23);
     
 //JUGADORES
     ctx.drawImage(image,player.x,player.y,40,40);
