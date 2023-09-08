@@ -6,6 +6,7 @@ let walls = [];
 let pause = false;
 var image = new Image();
 var image2 = new Image();
+var fondoImg = new Image();
 var pauseImg = new Image();
 var audio = new Audio();
 let cronometro;
@@ -14,6 +15,7 @@ let segundos = 0;
 let minutos = 0;
 //audio.src="song.mp3";
 //audio.src="siuu.mp3";
+fondoImg.src="PARK.jpeg";
 image.src="Mamado.png";
 image2.src="rigby.png";
 pauseImg.src="Pause.jpg";
@@ -60,6 +62,8 @@ const target = new Cuadrado(randomInteger(460), randomInteger(460),40,40,"black"
 //BORDES 
 walls.push( new Cuadrado(-10,30,1650,5,"BLACK") )
 walls.push( new Cuadrado(0,30,5,1100,"BLACK") )
+walls.push( new Cuadrado(0,1095,1450,6,"BLACK") )
+walls.push( new Cuadrado(1550,1095,450,6,"BLACK") )
 walls.push( new Cuadrado(1640,0,5,1100,"BLACK") )
 //walls.push( new Cuadrado(0,1090,1400,5,"BLACK") )
 
@@ -144,7 +148,14 @@ walls.push( new Cuadrado(1510,250,135,15,"BLACK") )
 walls.push( new Cuadrado(1310,1015,150,15,"BLACK") )
 walls.push( new Cuadrado(1310,935,230,15,"BLACK") )
 walls.push( new Cuadrado(200,820,350,15,"BLACK") )
-walls.push( new Cuadrado(285,580,15,250,"BLACK") )
+walls.push( new Cuadrado(285,580,15,180,"BLACK") )
+walls.push( new Cuadrado(200,900,268,15,"BLACK") )
+walls.push( new Cuadrado(465,995,585,15,"BLACK") )
+walls.push( new Cuadrado(466,900,15,100,"BLACK") )
+walls.push( new Cuadrado(1050,910,15,100,"BLACK") )
+walls.push( new Cuadrado(1225,910,15,120,"BLACK") )
+walls.push( new Cuadrado(1225,1015,120,15,"BLACK") )
+walls.push( new Cuadrado(1050,910,190,15,"BLACK") )
 
 window.requestAnimationFrame = (function () {
     return window.requestAnimationFrame ||
@@ -255,16 +266,16 @@ function update(){
 function paint(){
 //MAPA DE FONDO
 
-    ctx.fillStyle = "#70401F";
-    ctx.fillRect(0,0,1645,1100);
+ctx.drawImage(fondoImg,0,0,1645,1100);
+   // ctx.fillRect(0,0,1645,1100);
     audio.play();
 
 //PUNTAJE Y TITULO
     ctx.font = "20px ARIAL";
-    ctx.fillStyle = "WHITE";
+    ctx.fillStyle = "BLACK";
     ctx.fillText("SCORE: "+score, 5, 20);
     ctx.font = "20px ARIAL";
-    ctx.fillStyle = "WHITE";
+    ctx.fillStyle = "BLACK";
     ctx.fillText("REGULAR SHOW ", 730, 23);
     
 //JUGADORES
