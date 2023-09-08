@@ -13,6 +13,10 @@ let cronometro;
 let isRunning = false;
 let segundos = 0;
 let minutos = 0;
+var tiempoTotal = 0; 
+var tiempoRestante = tiempoTotal; 
+var intervalo = 1000; 
+
 //audio.src="song.mp3";
 //audio.src="siuu.mp3";
 fondoImg.src="PARK.jpeg";
@@ -292,6 +296,13 @@ ctx.drawImage(fondoImg,0,0,1645,1100);
     ctx.font = "20px ARIAL";
     ctx.fillStyle = "BLACK";
     ctx.fillText("REGULAR SHOW ", 730, 23);
+
+
+    ctx.font = "30px Arial";
+    ctx.fillStyle = "BLACK";
+
+    // Dibuja el tiempo restante en el canvas
+    ctx.fillText("Tiempo: " + tiempoRestante + "s", 1200, 30);
     
 //JUGADORES
     ctx.drawImage(image,player.x,player.y,40,40);
@@ -332,3 +343,26 @@ function randomInteger(max) {
 
 
 //TEMPORIZADOR
+  function dibujarTiempo() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpia el canvas
+
+    // Configura el estilo del texto
+  }
+
+  // Función para actualizar el temporizador
+  function actualizarTemporizador() {
+    tiempoRestante++; // Reduce el tiempo restante en 1 segundo
+
+    if (tiempoRestante >= 0) {
+      dibujarTiempo(); // Dibuja el tiempo actualizado
+    } else {
+      clearInterval(intervalID); // Detiene el temporizador cuando el tiempo se agota
+      alert("Tiempo agotado");
+    }
+  }
+
+  // Inicia el temporizador
+  var intervalID = setInterval(actualizarTemporizador, intervalo);
+
+  // Llama a la función de dibujo inicial
+  dibujarTiempo();
